@@ -8,10 +8,7 @@ class Setting extends React.Component{
 			
 		}
 	}
-	componentDidMount = () =>{
-		console.log(React)
-		console.log(React.echarts)
-		
+	componentDidMount = () =>{	
 		let myEchart = React.echarts.init(document.getElementById('bar'))
 		myEchart.setOption({
 			title: { text: 'ECharts 入门示例' },

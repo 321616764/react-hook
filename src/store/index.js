@@ -1,12 +1,16 @@
-import {createStore,combineReducers} from 'redux'
+import {createStore,combineReducers,compose,applyMiddleware} from 'redux'
 import {message} from './reducers/message'
+import thunkMiddleware from 'redux-thunk'
 
 const initStore = () =>{
 	const store = createStore(
 		combineReducers({
 			message,
 		}),
-		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+		compose(
+			applyMiddleware(thunkMiddleware),
+			window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f=>f
+		)
 	)
 	return store;
 }

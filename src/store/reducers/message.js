@@ -23,3 +23,8 @@ export function message(state=defaultMessage,action){
 			}
 	}
 }
+
+export const setMessage = (data) =>{
+	console.log(data)
+	return {type:'SETMESSAGE',payload:data}
+}
