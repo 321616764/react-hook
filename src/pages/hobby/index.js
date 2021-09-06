@@ -3,15 +3,8 @@ import {Table} from 'antd'
 import {connect} from 'react-redux'
 import	* as Routes from 'react-router'
 import {setMessage} from '../../store/reducers/message.js'
-<<<<<<< HEAD
-<<<<<<< HEAD
 import prototypeComponent from '../../HOC/test.js'
-=======
 
->>>>>>> eb4f05b31c406b71186db3362965448415141e1e
-=======
-
->>>>>>> eb4f05b31c406b71186db3362965448415141e1e
 @connect(
   (state)=>({
     message:state.message,
@@ -44,15 +37,5 @@ class Hobby extends React.Component{
 	}
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 export default prototypeComponent(Hobby)
-=======
-console.log(Hobby,"hby")
-export default Hobby
->>>>>>> eb4f05b31c406b71186db3362965448415141e1e
-=======
-console.log(Hobby,"hby")
-export default Hobby
->>>>>>> eb4f05b31c406b71186db3362965448415141e1e
+
