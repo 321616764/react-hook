@@ -7,6 +7,7 @@ function prototypeComponent(Component){
 				
 			}
 		}
+<<<<<<< HEAD
 		componentDidMount= () =>{
 			console.log("自定义高阶组件")
 			console.log(this.props,"props") //可拿取所应用组件的props
@@ -17,3 +18,11 @@ function prototypeComponent(Component){
 	}
 }
 export default prototypeComponent;
+=======
+		render(){
+			return(<Component/>)
+		}
+		
+	}
+}
+>>>>>>> eb4f05b31c406b71186db3362965448415141e1e
