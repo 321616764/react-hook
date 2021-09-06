@@ -3,20 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Router} from 'react-router-dom'
+import {HashRouter as Router} from 'react-router-dom'
 import * as Echarts from 'echarts'
 import {Provider} from 'react-redux'
+import initStore from './store'
+const store = initStore();
+
+export const publicDispatch = store.dispatch
 
 React.echarts = Echarts;
 React.getNum = function(num){
 	return Number(num)*2
 }
 ReactDOM.render(
-	// <Provider>
-		<React.StrictMode>
-			<App />
-		</React.StrictMode>,
-	// </Provider>,
+	<Provider store={store}>
+		<App/>
+	</Provider>,
+ //  <React.StrictMode>
+	// <App />
+ //  </React.StrictMode>,
   document.getElementById('root')
 );
 

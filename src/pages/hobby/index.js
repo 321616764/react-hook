@@ -1,13 +1,15 @@
 import React from 'react'
-import store from '../../store/index.js'
 import {Table} from 'antd'
 import {connect} from 'react-redux'
-
-// @connect(
-//   (state)=>({
-//     message:state.message,
-//   }), 
-// )
+import	* as Routes from 'react-router'
+import {setMessage} from '../../store/reducers/message.js'
+import prototypeComponent from '../../HOC/test.js'
+@connect(
+  (state)=>({
+    message:state.message,
+  }),
+  {setMessage} 
+)
 class Hobby extends React.Component{
 	constructor(){
 		super()
@@ -15,21 +17,24 @@ class Hobby extends React.Component{
 			
 		}
 	}
+	componentDidMount = () =>{
+		console.log(Routes,"routes")
+	}
 	AddStore=()=>{
 		let action = {
-			type:'ADD',
-			data:"NEWs"
+			name:"NEWs"+parseInt(Math.random()*10)
 		}
+		this.props.setMessage(action)
 	}
 	render(){
 		return(<div>
 			<div>
-
-			</div>
-			<div>
-				<button onClick={()=>{this.AddStore()}}>AddReducer</button>
+				<div>{this.props.message.name}</div>
+				<button onClick={()=>{this.AddStore()}}> AddReducer </button>
 			</div>
 		</div>)
 	}
 }
-export default Hobby
+
+
+export default prototypeComponent(Hobby)
