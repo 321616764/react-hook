@@ -8,7 +8,6 @@ function prototypeComponent(Component){
 			}
 		}
 		componentDidMount= () =>{
-			console.log("自定义高阶组件")
 			console.log(this.props,"props") //可拿取所应用组件的props
 		}
 		render(){
